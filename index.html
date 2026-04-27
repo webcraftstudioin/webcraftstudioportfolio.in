@@ -433,20 +433,20 @@ img {
   background: #ff7a00;
 }
 
-.stack-title {
+.myskills-title {
   cursor: pointer;
   color: #ff7a00;
 }
 
 /* Hidden by default */
-.stack-content {
+.myskills-content {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.7s ease;
 }
 
 /* When open */
-.stack-content.active {
+.myskills-content.active {
   max-height: 2000px;
 }
 
@@ -575,6 +575,49 @@ img {
   text-shadow: 0 0 10px #ff7a00;
 }
 
+/* VIDEO CARD */
+.video-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* VIDEO STYLE */
+.video-preview {
+  width: 100%;
+  display: block;
+  transition: 0.4s;
+}
+
+/* HOVER EFFECT */
+
+
+/* PLAY BUTTON */
+.play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255,122,0,0.9);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+/* PLAY BUTTON HOVER */
+.play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 20px #ff7a00;
+}
+
 </style>
 </head>
 
@@ -611,7 +654,7 @@ img {
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="#technologies">Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="#technologies">My Skills</a></li>
         <li class="nav-item"><a class="nav-link" href="#case-study">Portfolio</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
@@ -679,12 +722,12 @@ img {
   <div class="container">
 
     <!-- 🔥 CLICK BUTTON -->
-    <h2 class="stack-title" onclick="toggleStack()">
-      Stack ⬇️
+    <h2 class="myskills-title" onclick="togglemyskills()">
+      My Skills ⬇️
     </h2>
 
     <!-- 🔽 DROPDOWN CONTENT -->
-    <div id="stackContent" class="stack-content">
+    <div id="myskillsContent" class="myskills-content">
 
       <!-- TECHNOLOGIES -->
       <h4 class="mt-4">Technologies</h4>
@@ -868,9 +911,59 @@ img {
       </div>
     </div>
 
+
+<!-- AI VIDEO SECTION -->
+<section id="ai-videos" class="section">
+  <div class="container">
+
+    <h2 class="text-center mb-5">AI Video Creations</h2>
+
+    <div class="row align-items-center mb-5">
+
+      <!-- VIDEO -->
+      <div class="col-lg-6">
+        <div class="video-card">
+
+          <video class="video-preview" src="final video.mp4"></video>
+
+          <!-- PLAY BUTTON -->
+          <div class="play-btn" onclick="playVideo(this)">
+            <i class="fas fa-play"></i>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="col-lg-6">
+        <h4>AI Video for Educational Platform</h4>
+
+        <p><strong>Problem:</strong> Clients needed an engaging way to explain services and answer common questions quickly.</p>
+
+        <p><strong>Solution:</strong> Created an AI-powered video with:</p>
+        <ul>
+          <li>Script-based structured storytelling</li>
+          <li>Natural AI voiceover</li>
+          <li>Modern visuals and transitions</li>
+          <li>Fast production using AI tools</li>
+        </ul>
+
+        <p><strong>Result:</strong> Improved engagement, better understanding, and faster content delivery.</p>
+
+
+        <a href="#" class="btn btn-orange">View More Videos</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+ 
+
     <!-- View More Button -->
     <div class="text-center mt-5">
-      <a href="#" class="btn btn-orange btn-lg">View More Projects</a>
+      <a href="https://www.behance.net/shashankurs/projects" class="btn btn-orange btn-lg">View More Projects</a>
     </div>
 
   </div>
@@ -997,8 +1090,19 @@ target="_blank">
 <script>
 
 
-function toggleStack() {
-  document.getElementById("stackContent").classList.toggle("active");
+  function playVideo(button) {
+  let video = button.previousElementSibling;
+
+  video.setAttribute("controls", true);
+  video.play();
+
+  button.style.display = "none";
+}
+
+
+
+function togglemyskills() {
+  document.getElementById("myskillsContent").classList.toggle("active");
 }
 
 
