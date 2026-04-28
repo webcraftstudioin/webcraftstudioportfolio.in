@@ -618,6 +618,90 @@ img {
   box-shadow: 0 0 20px #ff7a00;
 }
 
+/* ===== MY SKILLS SPACING FIX ===== */
+
+/* Space between sections */
+#technologies h4 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Underline effect for headings */
+#technologies h4::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 2px;
+  background: #ff7a00;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* Add spacing between rows */
+#technologies .row {
+  margin-bottom: 25px;
+}
+
+/* Better card spacing */
+#technologies .service-box {
+  padding: 25px 15px;
+}
+
+/* Center section nicely */
+#technologies {
+  text-align: center;
+}
+
+/* Smooth opening animation */
+.myskills-content {
+  transition: all 0.5s ease;
+}
+
+/* ===== MOBILE IMPROVEMENTS ===== */
+@media (max-width: 768px) {
+
+  /* Reduce section gaps */
+  .section {
+    padding: 40px 15px;
+  }
+
+  /* Headings smaller */
+  h2 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  /* Improve My Skills spacing */
+  #technologies h4 {
+    margin-top: 30px;
+  }
+
+  /* Better grid spacing */
+  #technologies .row {
+    margin-bottom: 15px;
+  }
+
+  /* Cards tighter */
+  .service-box {
+    padding: 18px;
+  }
+
+  /* Video section fix */
+  .video-card {
+    margin-bottom: 20px;
+  }
+
+  /* Fix buttons full width */
+  .btn {
+    width: 100%;
+  }
+}
+
 </style>
 </head>
 
